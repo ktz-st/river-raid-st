@@ -5,6 +5,7 @@ _Static_assert(offsetof(modee_lut_t, fill) == 1536, "RR_LinePlanar fill offset")
 
 void modee_build_lut(modee_lut_t* _lut, const uint8_t _selmap[4])
 {
+	/* One-time LUT setup, not framebuffer drawing. Literal ASM spans use plane[]. */
 	for (int b = 0; b < 256; ++b)
 	{
 		uint8_t v[4] = { 0, 0, 0, 0 };
@@ -55,6 +56,8 @@ void modee_build_lut(modee_lut_t* _lut, const uint8_t _selmap[4])
 			_lut->fill[s][pl] = (_selmap[s] & (1u << pl)) ? 0xffff : 0;
 }
 
+#ifdef RR_MODEE_REFERENCE
+/* Diagnostic conversions, never part of the normal Atari executable. */
 void modee_row_to_solid(const modee_lut_t* _lut, const uint8_t* _src, uint16_t* _out)
 {
 	const uint8_t* s = _src + MODEE_VIS_FIRST;
@@ -122,6 +125,8 @@ void modee_planar_to_indices(const uint16_t* _row, uint8_t* _px)
 		}
 	}
 }
+
+#endif
 
 void modee_selmap_from_memory(const uint8_t* _mem, const uint8_t* _inks, uint8_t _selmap[4])
 {

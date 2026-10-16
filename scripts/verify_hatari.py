@@ -391,6 +391,9 @@ with HatariSession(str(DISK/'RR5.PRG'),machine='ste',hatari='/opt/homebrew/bin/h
     put('gPlayerX',0)
     stop('&& ($%x).w = 1'%a['gPlayerState'])
     restart();check('F1 during explosion returns to a fresh game')
+    # restart() stops before this frame's HUD update; compare completed pixels.
+    stop_at('Screen_Update')
+    quit_ready=dump('quit_ready_reference')
     escape();before=dump('quit_prompt')
     assert word(before,'gQuitConfirm')==1
     r.cmd('run');h.wait(.5);r.cmd('break');after=dump('quit_frozen')
@@ -398,9 +401,11 @@ with HatariSession(str(DISK/'RR5.PRG'),machine='ste',hatari='/opt/homebrew/bin/h
         assert before[a[n]:a[n]+size]==after[a[n]:a[n]+size],n
     panel=long(before,'gpPanel')
     assert any(before[panel:panel+6400])
-    runkey('n');assert word(dump('quit_cancel_n'),'gQuitConfirm')==0
+    runkey('n');cancelled=dump('quit_cancel_n')
+    assert word(cancelled,'gQuitConfirm')==0
+    assert quit_ready[panel:panel+6400]==cancelled[panel:panel+6400]
     escape();escape();assert word(dump('quit_cancel_esc'),'gQuitConfirm')==0
-    check('ESC confirmation freezes gameplay; N and ESC cancel')
+    check('ESC confirmation freezes gameplay; N restores exact HUD bytes; ESC cancels')
     escape();r.cmd('bp all');r.cmd('run');r.s.close()
     h.tap('y',hold=.2,after=1)
     assert h.mem(a['gScreenClass'],4).u32(a['gScreenClass'])==0, 'game still running after Y'

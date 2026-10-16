@@ -146,6 +146,9 @@ local hrdb-enabled Hatari and helper scripts referenced in
 Do not report emulator tests as passed if these helpers are unavailable.
 
 Preserve indexed STE PNG palette order, transparency, sprite masks and preshifts.
+Use word/longword ASM or GodLib blitter kernels for runtime raster writes, not
+per-pixel C loops. `make verify-raster` checks the small CPU raster kernels;
+it additionally requires the optional Python `machine68k` package.
 Never regenerate editable source atlases with the one-time bootstrap/import
 scripts during an ordinary build. Keep YM-only audio, existing controls,
 checkpoint behaviour and the 512 KiB target unless the user requests changes.

@@ -34,6 +34,7 @@
 #include "title.h"
 #include "title_assets.h"
 #include "palette.h"
+#include "raster_cpu.h"
 static void RR_HudNumber(U8 *row,U16 first,U16 last,U32 value,U16 colour)
 {
     U16 i;
@@ -56,6 +57,7 @@ static U16 RR_HudFuel(U16 *panel,const U8 *rows,U16 fuel,unsigned *previous);
 #define A8_HUD_CELL RR_HudCell
 #define A8_HUD_NUMBER RR_HudNumber
 #define A8_HUD_FUEL RR_HudFuel
+#define A8_HUD_FILL RR_FillRowsCPU
 #endif
 #include "hud.h"
 #include "player.h"
@@ -65,7 +67,7 @@ static U16 RR_HudFuel(U16 *panel,const U8 *rows,U16 fuel,unsigned *previous);
 
 static U16 RR_HudFuel(U16 *panel,const U8 *rows,U16 fuel,unsigned *previous)
 {
-    U16 position=fuel>>11,x,shift,mask,spill,y,*dst;
+    U16 position=fuel>>11,x;
     if (*previous==position) return 0;
     if (*previous<32) {
         U16 old=88+*previous*2,column;
@@ -74,19 +76,8 @@ static U16 RR_HudFuel(U16 *panel,const U8 *rows,U16 fuel,unsigned *previous)
             RR_HudCell(panel,40+column,rows[40+column]);
         }
     }
-    x=88+position*2; shift=x&15;
-    mask=0xf000u>>shift;
-    /* Marker X is even, so only shift 14 can cross a word boundary. */
-    spill=shift==14 ? 0xc000 : 0;
-    dst=panel+20*80+(x/16)*4;
-    for (y=0;y<10;++y,dst+=80) {
-        dst[0]&=(U16)~mask; dst[1]&=(U16)~mask;
-        dst[2]|=mask; dst[3]|=mask;
-        if (spill) {
-            dst[4]&=(U16)~spill; dst[5]&=(U16)~spill;
-            dst[6]|=spill; dst[7]|=spill;
-        }
-    }
+    x=88+position*2;
+    RR_FuelMarkerCPU(panel+20*80+(x/16)*4,x&15);
     *previous=position; return 1;
 }
 
@@ -195,6 +186,7 @@ static unsigned gFuelMark=65535;
 static void RR_ConfirmTextOn(U16 *target,const char *text,U16 x,U16 y)
 {
     static const char chars[]="QUITOS?Y/ENR:C";
+    static const U8 blank[8]={0};
     static const U8 glyphs[][8]={
         {0x38,0x44,0x44,0x44,0x54,0x48,0x34,0},
         {0x44,0x44,0x44,0x44,0x44,0x44,0x38,0},
@@ -212,12 +204,10 @@ static void RR_ConfirmTextOn(U16 *target,const char *text,U16 x,U16 y)
         {0x38,0x44,0x40,0x40,0x40,0x44,0x38,0}
     };
     while (*text) {
-        U16 i,row,plane;
-        U8 *dst=(U8*)target+(U32)y*dSTRIDE+(x>>4)*8+((x&8)!=0);
+        U16 i;
         for (i=0;chars[i] && chars[i]!=*text;++i) {}
-        for (row=0;row<8;++row)
-            for (plane=0;plane<4;++plane)
-                dst[(U32)row*dSTRIDE+plane*2]=chars[i] ? glyphs[i][row] : 0;
+        RR_TextGlyphCPU(target+(U32)y*(dSTRIDE/2)+(x>>4)*4,
+            chars[i] ? glyphs[i] : blank,x&8);
         ++text; x+=8;
     }
 }
@@ -674,28 +664,20 @@ S16 GodLib_Game_Main( S16 aArgCount, char * apArgs[] )
 	a8_hud_fuel( gpPanel, gHudCells, gFuel, &gFuelMark );
 
 	/* Split completes before fetching HUD row 0: one black separator row. */
-	{
-		U16 l, w, pl;
-		for( l = 0; l < 1; l++ )
-			for( w = 0; w < MODEE_ST_GROUPS; w++ )
-				for( pl = 0; pl < 4; pl++ )
-					gpPanel[ (U32)l * MODEE_ST_WORDS + w * 4 + pl ] = 0x0000;
-	}
+	RR_FillRowsCPU(gpPanel,0,1);
 
 	/* Linie zapasu pod panelem malujemy KONTRASTOWO, nie tlem panelu.
 	 * Dzieki temu natychmiast widac, czy split odpalil za wczesnie: kazda
 	 * widoczna linia znacznika to jedna linia spoznienia. Gdyby zapas byl
 	 * w kolorze panelu, problem bylby niewidoczny zamiast naprawiony. */
 	{
-		U16 l, w, pl;
+		U16 l;
 		for( l = A8_HUD_HEIGHT; l < dHUD_LINES; l++ )
 		{
 			const U16 lInk = ( l & 1 ) ? dHUD_MARK_A : dHUD_MARK_B;
 			U16 * lpLine = gpPanel + (U32)l * MODEE_ST_WORDS;
 
-			for( w = 0; w < MODEE_ST_GROUPS; w++ )
-				for( pl = 0; pl < 4; pl++ )
-					lpLine[ w * 4 + pl ] = ( lInk & ( 1 << pl ) ) ? 0xFFFF : 0x0000;
+			RR_FillRowsCPU(lpLine,lInk,1);
 		}
 	}
 

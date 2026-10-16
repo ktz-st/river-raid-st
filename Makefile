@@ -29,14 +29,14 @@ CRT = $(CMINI_DIR)/lib/crt0.o
 C_NAMES = modee split player enemies bank gen_direct cold_init native_assets \
  audio audio_psg audio_psg_data hud_masks ste_graphic ste_platform title title_assets palette
 S_NAMES = split_s gen_sparse_m68k expand_line planar_line copyrow checkcopy \
- restore_cpu bank_cpu shot_cpu shot_terrain hud_cpu sprite_cpu road_cpu mask_overlap psg_lock
+ restore_cpu bank_cpu shot_cpu shot_terrain hud_cpu raster_cpu sprite_cpu road_cpu mask_overlap psg_lock
 OBJECTS = $(addprefix build/,$(addsuffix .o,$(C_NAMES) $(S_NAMES))) \
  build/rr_512.o build/stack_512.o
 HEADERS = $(wildcard src/*.h) assets/hud_assets.inc $(GEN)/native_assets.h $(GEN)/title_assets.h
 GENERATED_C = native_assets audio_psg_data hud_masks title_assets
 GENERATED_S = gen_sparse_m68k sprite_cpu road_cpu
 
-.PHONY: all debug clean run verify verify-hatari smoke-hatari
+.PHONY: all debug clean run verify verify-raster verify-hatari smoke-hatari
 all: release/RR.PRG
 debug: build/RR.PRG
 
@@ -86,6 +86,8 @@ build/RR.PRG: build/godlib/linked.o Makefile
 
 verify: release/RR.PRG build/RR.PRG
 	$(PYTHON) scripts/verify_migration.py
+verify-raster: build/raster_cpu.o build/modee.o
+	$(PYTHON) scripts/verify_raster_cpu.py
 verify-hatari: release/RR.PRG build/RR.PRG
 	$(PYTHON) scripts/verify_hatari.py
 smoke-hatari: release/RR.PRG build/RR.PRG

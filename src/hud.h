@@ -55,10 +55,15 @@ static void a8_hud_draw(uint16_t *panel, uint32_t score, uint32_t high,
 {
     unsigned char rows[60];
     a8_hud_rows(rows, score, high, reserves, bridge);
+#ifdef A8_HUD_FILL
+    A8_HUD_FILL(panel,5,A8_HUD_HEIGHT);
+#else
+    /* Diagnostic reference only; the game supplies the ASM fill kernel. */
     for (unsigned y=0; y<A8_HUD_HEIGHT; ++y)
         for (unsigned word=0; word<20; ++word)
             for (unsigned plane=0; plane<4; ++plane)
                 panel[y*80+word*4+plane] = (5 & (1u << plane)) ? 0xffff : 0;
+#endif
     for (unsigned cell=0; cell<60; ++cell) a8_hud_cell(panel, cell, rows[cell]);
 }
 

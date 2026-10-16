@@ -211,3 +211,26 @@ been displayed; FIRE fades it out, prepares the full game under black, and fades
 in the game palette. The game-over path fades out before decoding the title.
 `python3 -B scripts/verify_hatari.py --title-fades` checks intermediate brightness,
 black preparation stages, final palettes and the last-life pause on 512 KB.
+
+## Runtime Raster Audit
+
+Terrain, sprites, shots, background restore and HUD cells already use native
+68000/blitter kernels. Fuel-marker writes, the 8px exit-confirmation font and
+HUD/background fills now also use `src/raster_cpu.s`: longword masks or copies,
+with no per-pixel drawing loop in production C. C prepares glyphs/coordinates,
+controls dirty HUD cells and restores them through the existing ASM renderer.
+
+Legacy packed-row conversions and the per-pixel planar preview are available
+only with `RR_MODEE_REFERENCE`; normal builds no longer link these unused
+preview/conversion routines. The initial LUT setup stays in C: compact terrain
+literal spans still need its byte-to-plane lookup. `RR_HUD_REFERENCE` and `RR_LEGACY_ROM_ASSETS`
+remain diagnostic alternatives, not release settings. Palette/DAC calculations,
+collision masks and LZSS token processing are not per-pixel raster drawing.
+
+`make verify-raster` requires the optional Python `machine68k` package. It runs
+640 cases using the production 68000 code against a pixel-wise reference,
+including all marker shifts, all glyph byte values and both glyph half-words,
+all 16 fill inks, unchanged neighbours/guards and preserved ABI registers.
+It also checks four selector mappings through the production LUT initializer,
+including the byte-to-plane lookup required by compact terrain literal spans.
+Reports and kernel binaries stay under `build/raster_cpu_test/`.

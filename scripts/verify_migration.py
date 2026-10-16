@@ -25,6 +25,9 @@ names = {line.split()[-1] for line in symbols.splitlines() if line.split()}
 assert {'GodLib_Game_Main', 'RRAudio_Init', 'RRPsg_Vbl', 'rrPsgEffects'} <= names
 assert not any(n.startswith(('SlugMixer', 'AudioMixer', 'rrAudioSamples')) for n in names)
 assert not {'File_Init', 'File_DeInit', 'File_Open', 'File_Load'} & names
+assert {'RR_FillRowsCPU','RR_FuelMarkerCPU','RR_TextGlyphCPU'} <= names
+assert not {'modee_row_to_solid','modee_row_to_bank','modee_row_to_planar',
+            'modee_planar_to_indices'} & names, 'diagnostic C raster converters linked'
 assert not any(n.startswith(('Font_', 'Fade_', 'Video_SetFalcon', 'Video_GetPalTT',
                              'Video_UpdateRegsTT', 'Audio_SaveDmaFalcon',
                              'Sprite_Create', 'Graphic_4BP_DrawPixel')) for n in names)

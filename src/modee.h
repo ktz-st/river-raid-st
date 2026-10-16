@@ -53,7 +53,9 @@ extern "C" {
 void modee_build_lut(modee_lut_t* _lut, const uint8_t _selmap[4]);
 
 /* Konwertuje jeden wiersz zrodlowy (48 bajtow) na 80 slow planarnych ST. */
+#ifdef RR_MODEE_REFERENCE
 void modee_row_to_planar(const modee_lut_t* _lut, const uint8_t* _src, uint16_t* _out);
+#endif
 
 /* Trusted compact row directly to 320 planar pixels. Record may be odd;
  * LUT and output must be word-aligned. No intermediate packed bitmap. */
@@ -61,6 +63,7 @@ void RR_LinePlanar(const uint8_t* record, const modee_lut_t* lut, uint16_t* out)
 
 /* Maska kolizji wiersza: 20 slow po 16 pikseli + slowo wartownika na koncu,
  * zeby odczyt 16 bitow spod dowolnego x nie wyszedl poza tablice. */
+#ifdef RR_MODEE_REFERENCE
 void modee_row_to_solid(const modee_lut_t* _lut, const uint8_t* _src, uint16_t* _out);
 
 /* Maska "goly lad" w tym samym ukladzie co modee_row_to_solid. */
@@ -68,6 +71,7 @@ void modee_row_to_bank(const modee_lut_t* _lut, const uint8_t* _src, uint16_t* _
 
 /* Tylko do weryfikacji/podgladu: rozklada 80 slow planarnych na 320 indeksow. */
 void modee_planar_to_indices(const uint16_t* _row, uint8_t* _px);
+#endif
 
 /* Odczytuje rejestry koloru Mode E z obrazu pamieci A8 i mapuje je na indeksy ST.
  * Selektor 0 = COLBK ($2C8), 1 = COLPF0 ($2C4), 2 = COLPF1 ($2C5), 3 = COLPF2 ($2C6).
