@@ -1,0 +1,74 @@
+{
+  "cell": [
+    88,
+    40
+  ],
+  "columns": 3,
+  "origin_in_cell": [
+    4,
+    2
+  ],
+  "transparent_index": 1,
+  "frames": [
+    {
+      "name": "mountain_bc06",
+      "address": 48134,
+      "rect": [
+        4,
+        2,
+        24,
+        12
+      ]
+    },
+    {
+      "name": "mountain_bc2a",
+      "address": 48170,
+      "rect": [
+        92,
+        2,
+        32,
+        12
+      ]
+    },
+    {
+      "name": "mountain_bc5a",
+      "address": 48218,
+      "rect": [
+        180,
+        2,
+        40,
+        20
+      ]
+    },
+    {
+      "name": "mountain_bcbe",
+      "address": 48318,
+      "rect": [
+        4,
+        42,
+        48,
+        14
+      ]
+    },
+    {
+      "name": "mountain_bd12",
+      "address": 48402,
+      "rect": [
+        92,
+        42,
+        64,
+        22
+      ]
+    },
+    {
+      "name": "mountain_bdc2",
+      "address": 48578,
+      "rect": [
+        180,
+        42,
+        80,
+        30
+      ]
+    }
+  ]
+}

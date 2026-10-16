@@ -1,0 +1,1409 @@
+{
+  "cell": [
+    80,
+    32
+  ],
+  "columns": 8,
+  "origin_in_cell": [
+    8,
+    2
+  ],
+  "transparent_index": 0,
+  "rows": [
+    {
+      "name": "player",
+      "row": 0,
+      "count": 7
+    },
+    {
+      "name": "boat_right",
+      "row": 1,
+      "count": 6
+    },
+    {
+      "name": "boat_left",
+      "row": 2,
+      "count": 6
+    },
+    {
+      "name": "jet_right",
+      "row": 3,
+      "count": 6
+    },
+    {
+      "name": "jet_left",
+      "row": 4,
+      "count": 6
+    },
+    {
+      "name": "helicopter_a_right",
+      "row": 5,
+      "count": 6
+    },
+    {
+      "name": "helicopter_a_left",
+      "row": 6,
+      "count": 6
+    },
+    {
+      "name": "helicopter_b_right",
+      "row": 7,
+      "count": 6
+    },
+    {
+      "name": "helicopter_b_left",
+      "row": 8,
+      "count": 6
+    },
+    {
+      "name": "armed_helicopter_a_right",
+      "row": 9,
+      "count": 6
+    },
+    {
+      "name": "armed_helicopter_a_left",
+      "row": 10,
+      "count": 6
+    },
+    {
+      "name": "armed_helicopter_b_right",
+      "row": 11,
+      "count": 6
+    },
+    {
+      "name": "armed_helicopter_b_left",
+      "row": 12,
+      "count": 6
+    },
+    {
+      "name": "balloon_right",
+      "row": 13,
+      "count": 6
+    },
+    {
+      "name": "balloon_left",
+      "row": 14,
+      "count": 6
+    },
+    {
+      "name": "fuel",
+      "row": 15,
+      "count": 6
+    },
+    {
+      "name": "bridge",
+      "row": 16,
+      "count": 6
+    },
+    {
+      "name": "tank",
+      "row": 17,
+      "count": 8
+    },
+    {
+      "name": "projectile",
+      "row": 18,
+      "count": 7
+    }
+  ],
+  "frames": [
+    {
+      "group": "player",
+      "pose": 0,
+      "name": "player_neutral",
+      "rect": [
+        8,
+        2,
+        16,
+        14
+      ]
+    },
+    {
+      "group": "player",
+      "pose": 1,
+      "name": "player_right",
+      "rect": [
+        88,
+        2,
+        16,
+        14
+      ]
+    },
+    {
+      "group": "player",
+      "pose": 2,
+      "name": "player_left",
+      "rect": [
+        168,
+        2,
+        16,
+        14
+      ]
+    },
+    {
+      "group": "player",
+      "pose": 3,
+      "name": "player_explosion_1",
+      "rect": [
+        248,
+        2,
+        16,
+        14
+      ]
+    },
+    {
+      "group": "player",
+      "pose": 4,
+      "name": "player_explosion_2",
+      "rect": [
+        328,
+        2,
+        16,
+        14
+      ]
+    },
+    {
+      "group": "player",
+      "pose": 5,
+      "name": "player_explosion_3",
+      "rect": [
+        408,
+        2,
+        16,
+        14
+      ]
+    },
+    {
+      "group": "player",
+      "pose": 6,
+      "name": "player_explosion_4",
+      "rect": [
+        488,
+        2,
+        16,
+        14
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 13,
+      "name": "boat_right",
+      "rect": [
+        8,
+        34,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 72,
+      "name": "boat_explosion_right_1",
+      "rect": [
+        88,
+        34,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 73,
+      "name": "boat_explosion_right_2",
+      "rect": [
+        168,
+        34,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 74,
+      "name": "boat_explosion_right_3",
+      "rect": [
+        248,
+        34,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 75,
+      "name": "boat_explosion_right_4",
+      "rect": [
+        328,
+        34,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 76,
+      "name": "boat_explosion_right_5",
+      "rect": [
+        408,
+        34,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 29,
+      "name": "boat_left",
+      "rect": [
+        8,
+        66,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 77,
+      "name": "boat_explosion_left_1",
+      "rect": [
+        88,
+        66,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 78,
+      "name": "boat_explosion_left_2",
+      "rect": [
+        168,
+        66,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 79,
+      "name": "boat_explosion_left_3",
+      "rect": [
+        248,
+        66,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 80,
+      "name": "boat_explosion_left_4",
+      "rect": [
+        328,
+        66,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 81,
+      "name": "boat_explosion_left_5",
+      "rect": [
+        408,
+        66,
+        32,
+        8
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 7,
+      "name": "jet_right",
+      "rect": [
+        8,
+        98,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 88,
+      "name": "jet_explosion_right_1",
+      "rect": [
+        88,
+        98,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 89,
+      "name": "jet_explosion_right_2",
+      "rect": [
+        168,
+        98,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 90,
+      "name": "jet_explosion_right_3",
+      "rect": [
+        248,
+        98,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 91,
+      "name": "jet_explosion_right_4",
+      "rect": [
+        328,
+        98,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 92,
+      "name": "jet_explosion_right_5",
+      "rect": [
+        408,
+        98,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 23,
+      "name": "jet_left",
+      "rect": [
+        8,
+        130,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 93,
+      "name": "jet_explosion_left_1",
+      "rect": [
+        88,
+        130,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 94,
+      "name": "jet_explosion_left_2",
+      "rect": [
+        168,
+        130,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 95,
+      "name": "jet_explosion_left_3",
+      "rect": [
+        248,
+        130,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 96,
+      "name": "jet_explosion_left_4",
+      "rect": [
+        328,
+        130,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 97,
+      "name": "jet_explosion_left_5",
+      "rect": [
+        408,
+        130,
+        16,
+        6
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 8,
+      "name": "helicopter_a_right",
+      "rect": [
+        8,
+        162,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 32,
+      "name": "helicopter_a_explosion_right_1",
+      "rect": [
+        88,
+        162,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 33,
+      "name": "helicopter_a_explosion_right_2",
+      "rect": [
+        168,
+        162,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 34,
+      "name": "helicopter_a_explosion_right_3",
+      "rect": [
+        248,
+        162,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 35,
+      "name": "helicopter_a_explosion_right_4",
+      "rect": [
+        328,
+        162,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 36,
+      "name": "helicopter_a_explosion_right_5",
+      "rect": [
+        408,
+        162,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 24,
+      "name": "helicopter_a_left",
+      "rect": [
+        8,
+        194,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 37,
+      "name": "helicopter_a_explosion_left_1",
+      "rect": [
+        88,
+        194,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 38,
+      "name": "helicopter_a_explosion_left_2",
+      "rect": [
+        168,
+        194,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 39,
+      "name": "helicopter_a_explosion_left_3",
+      "rect": [
+        248,
+        194,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 40,
+      "name": "helicopter_a_explosion_left_4",
+      "rect": [
+        328,
+        194,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 41,
+      "name": "helicopter_a_explosion_left_5",
+      "rect": [
+        408,
+        194,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 9,
+      "name": "helicopter_b_right",
+      "rect": [
+        8,
+        226,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 42,
+      "name": "helicopter_b_explosion_right_1",
+      "rect": [
+        88,
+        226,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 43,
+      "name": "helicopter_b_explosion_right_2",
+      "rect": [
+        168,
+        226,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 44,
+      "name": "helicopter_b_explosion_right_3",
+      "rect": [
+        248,
+        226,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 45,
+      "name": "helicopter_b_explosion_right_4",
+      "rect": [
+        328,
+        226,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 46,
+      "name": "helicopter_b_explosion_right_5",
+      "rect": [
+        408,
+        226,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 25,
+      "name": "helicopter_b_left",
+      "rect": [
+        8,
+        258,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 47,
+      "name": "helicopter_b_explosion_left_1",
+      "rect": [
+        88,
+        258,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 48,
+      "name": "helicopter_b_explosion_left_2",
+      "rect": [
+        168,
+        258,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 49,
+      "name": "helicopter_b_explosion_left_3",
+      "rect": [
+        248,
+        258,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 50,
+      "name": "helicopter_b_explosion_left_4",
+      "rect": [
+        328,
+        258,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 51,
+      "name": "helicopter_b_explosion_left_5",
+      "rect": [
+        408,
+        258,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 10,
+      "name": "armed_helicopter_a_right",
+      "rect": [
+        8,
+        290,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 52,
+      "name": "armed_helicopter_a_explosion_right_1",
+      "rect": [
+        88,
+        290,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 53,
+      "name": "armed_helicopter_a_explosion_right_2",
+      "rect": [
+        168,
+        290,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 54,
+      "name": "armed_helicopter_a_explosion_right_3",
+      "rect": [
+        248,
+        290,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 55,
+      "name": "armed_helicopter_a_explosion_right_4",
+      "rect": [
+        328,
+        290,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 56,
+      "name": "armed_helicopter_a_explosion_right_5",
+      "rect": [
+        408,
+        290,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 26,
+      "name": "armed_helicopter_a_left",
+      "rect": [
+        8,
+        322,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 57,
+      "name": "armed_helicopter_a_explosion_left_1",
+      "rect": [
+        88,
+        322,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 58,
+      "name": "armed_helicopter_a_explosion_left_2",
+      "rect": [
+        168,
+        322,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 59,
+      "name": "armed_helicopter_a_explosion_left_3",
+      "rect": [
+        248,
+        322,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 60,
+      "name": "armed_helicopter_a_explosion_left_4",
+      "rect": [
+        328,
+        322,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 61,
+      "name": "armed_helicopter_a_explosion_left_5",
+      "rect": [
+        408,
+        322,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 11,
+      "name": "armed_helicopter_b_right",
+      "rect": [
+        8,
+        354,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 62,
+      "name": "armed_helicopter_b_explosion_right_1",
+      "rect": [
+        88,
+        354,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 63,
+      "name": "armed_helicopter_b_explosion_right_2",
+      "rect": [
+        168,
+        354,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 64,
+      "name": "armed_helicopter_b_explosion_right_3",
+      "rect": [
+        248,
+        354,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 65,
+      "name": "armed_helicopter_b_explosion_right_4",
+      "rect": [
+        328,
+        354,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 66,
+      "name": "armed_helicopter_b_explosion_right_5",
+      "rect": [
+        408,
+        354,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 27,
+      "name": "armed_helicopter_b_left",
+      "rect": [
+        8,
+        386,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 67,
+      "name": "armed_helicopter_b_explosion_left_1",
+      "rect": [
+        88,
+        386,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 68,
+      "name": "armed_helicopter_b_explosion_left_2",
+      "rect": [
+        168,
+        386,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 69,
+      "name": "armed_helicopter_b_explosion_left_3",
+      "rect": [
+        248,
+        386,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 70,
+      "name": "armed_helicopter_b_explosion_left_4",
+      "rect": [
+        328,
+        386,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 71,
+      "name": "armed_helicopter_b_explosion_left_5",
+      "rect": [
+        408,
+        386,
+        16,
+        10
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 12,
+      "name": "balloon_right",
+      "rect": [
+        8,
+        418,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 98,
+      "name": "balloon_explosion_right_1",
+      "rect": [
+        88,
+        418,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 99,
+      "name": "balloon_explosion_right_2",
+      "rect": [
+        168,
+        418,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 100,
+      "name": "balloon_explosion_right_3",
+      "rect": [
+        248,
+        418,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 101,
+      "name": "balloon_explosion_right_4",
+      "rect": [
+        328,
+        418,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 102,
+      "name": "balloon_explosion_right_5",
+      "rect": [
+        408,
+        418,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 28,
+      "name": "balloon_left",
+      "rect": [
+        8,
+        450,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 103,
+      "name": "balloon_explosion_left_1",
+      "rect": [
+        88,
+        450,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 104,
+      "name": "balloon_explosion_left_2",
+      "rect": [
+        168,
+        450,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 105,
+      "name": "balloon_explosion_left_3",
+      "rect": [
+        248,
+        450,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 106,
+      "name": "balloon_explosion_left_4",
+      "rect": [
+        328,
+        450,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 107,
+      "name": "balloon_explosion_left_5",
+      "rect": [
+        408,
+        450,
+        16,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 82,
+      "name": "fuel",
+      "rect": [
+        8,
+        482,
+        16,
+        24
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 83,
+      "name": "fuel_explosion_1",
+      "rect": [
+        88,
+        482,
+        16,
+        24
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 84,
+      "name": "fuel_explosion_2",
+      "rect": [
+        168,
+        482,
+        16,
+        24
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 85,
+      "name": "fuel_explosion_3",
+      "rect": [
+        248,
+        482,
+        16,
+        24
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 86,
+      "name": "fuel_explosion_4",
+      "rect": [
+        328,
+        482,
+        16,
+        24
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 87,
+      "name": "fuel_explosion_5",
+      "rect": [
+        408,
+        482,
+        16,
+        24
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 108,
+      "name": "bridge",
+      "rect": [
+        8,
+        514,
+        64,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 109,
+      "name": "bridge_explosion_1",
+      "rect": [
+        88,
+        514,
+        64,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 110,
+      "name": "bridge_explosion_2",
+      "rect": [
+        168,
+        514,
+        64,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 111,
+      "name": "bridge_explosion_3",
+      "rect": [
+        248,
+        514,
+        64,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 112,
+      "name": "bridge_explosion_4",
+      "rect": [
+        328,
+        514,
+        64,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 113,
+      "name": "bridge_explosion_5",
+      "rect": [
+        408,
+        514,
+        64,
+        20
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 114,
+      "name": "tank_0",
+      "rect": [
+        8,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 115,
+      "name": "tank_1",
+      "rect": [
+        88,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 116,
+      "name": "tank_2",
+      "rect": [
+        168,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 117,
+      "name": "tank_3",
+      "rect": [
+        248,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 118,
+      "name": "tank_4",
+      "rect": [
+        328,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 119,
+      "name": "tank_5",
+      "rect": [
+        408,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 120,
+      "name": "tank_6",
+      "rect": [
+        488,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 121,
+      "name": "tank_7",
+      "rect": [
+        568,
+        546,
+        16,
+        11
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 122,
+      "name": "projectile_0",
+      "rect": [
+        8,
+        578,
+        16,
+        16
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 123,
+      "name": "projectile_1",
+      "rect": [
+        88,
+        578,
+        16,
+        16
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 124,
+      "name": "projectile_2",
+      "rect": [
+        168,
+        578,
+        16,
+        16
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 125,
+      "name": "projectile_3",
+      "rect": [
+        248,
+        578,
+        16,
+        16
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 126,
+      "name": "projectile_4",
+      "rect": [
+        328,
+        578,
+        16,
+        16
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 127,
+      "name": "projectile_5",
+      "rect": [
+        408,
+        578,
+        16,
+        16
+      ]
+    },
+    {
+      "group": "enemy",
+      "pose": 128,
+      "name": "projectile_6",
+      "rect": [
+        488,
+        578,
+        16,
+        16
+      ]
+    }
+  ]
+}

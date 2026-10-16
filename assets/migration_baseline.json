@@ -1,0 +1,17 @@
+{
+  "description": "Byte-exact baseline from the tested stage5 GodLib/YM 512K port before directory migration.",
+  "release_bytes": 53552,
+  "files": {
+    "release/RR.PRG": "dd77ae88baf2586144c3aa10deda6a46893799a7fa084d25a044a656cecb02ab",
+    "assets/RIVER_A8.BIN": "dc55bef6fa336003772643e68b9bfade7155ff4dde1aad814e1cf56ad818805f",
+    "assets/hud_assets.inc": "f13e1b3e93f9dd5ad9d41c83c4c18554b863686eb7b37f84564963dd4f47df86",
+    "assets/st_palette.py": "707c8e9468af0bba15dc76bd696187e72dc6caa4a0e1ac57a0613205eb835dc0",
+    "build/generated/native_assets.c": "ef56e5ef1e067f590b5450b9cde72e376fe20190f563de62e49f81dcbbd2b511",
+    "build/generated/native_assets.h": "078f76a91233e09a50c94ac1f977eb15206b46731ebfdca3304ba4c63b17fdad",
+    "build/generated/audio_psg_data.c": "946c980ee0e1268d0df0786e0cba05d724e3b1f7efac6e91529f1a010acb85d3",
+    "build/generated/hud_masks.c": "079746ad9b529b8317da2d20856453b848cebbf2d92b0bbf9a41f5b09a7ecf79",
+    "build/generated/gen_sparse_m68k.s": "bbe3dd373e1a8b166351675e35d462f688bca2e964a6c4dd6370d8b1eb1e427d",
+    "build/generated/sprite_cpu.s": "c6c06bc91fd4ca2ee33dbff5e07739238ff0fb7f7337a6796cbf13da71268b68",
+    "build/generated/road_cpu.s": "cc42287506af6749898e861a0b28a56974314084de58159aa875f2e621784e49"
+  }
+}

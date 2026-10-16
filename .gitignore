@@ -1,0 +1,7 @@
+/build/
+/release/
+__pycache__/
+*.pyc
+.DS_Store
+# Original cartridge is a local build input, not a redistributable source asset.
+/assets/RIVER_A8.BIN
